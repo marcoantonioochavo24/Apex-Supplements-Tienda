@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - APEX SUPPLEMENTS</title>
+
+  <!-- Más adelante enlazaremos aquí css/estilos.css -->
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body class="pagina-login">
+  <main class="login-layout">
+    <!-- Panel izquierdo: branding, frase, contexto -->
+    <section class="login-panel-info">
+      <div class="login-logo">
+        <span class="login-logo-marca">APEX</span>
+        <span class="login-logo-subtitulo">SUPPLEMENTS</span>
+      </div>
+
+      <h1 class="login-titulo">
+        Rendimiento al máximo, sin complicaciones.
+      </h1>
+
+      <p class="login-texto">
+        Accede a tu cuenta para explorar proteínas, pre-entrenos y todo lo que necesitas para llevar tus entrenos a otro nivel.
+      </p>
+
+      <ul class="login-beneficios">
+        <li>✔ Productos organizados por objetivos reales.</li>
+        <li>✔ Destacados pensados para gente que entrena de verdad.</li>
+        <li>✔ Carrito rápido y productos vistos recientemente.</li>
+      </ul>
+    </section>
+
+    <!-- Panel derecho: formulario de login -->
+    <section class="login-panel-form">
+      <div class="login-card">
+        <h2 class="login-card-titulo">Inicia sesión</h2>
+        <p class="login-card-subtitulo">
+          Usa tus credenciales de cliente para entrar en la tienda.
+        </p>
+
+        <form id="form-login" class="login-form">
+          <div class="campo-formulario">
+            <label for="usuario">Usuario</label>
+            <input
+              type="text"
+              id="usuario"
+              name="usuario"
+              autocomplete="username"
+              required
+            />
+          </div>
+
+          <div class="campo-formulario">
+            <label for="password">Contraseña</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              autocomplete="current-password"
+              required
+            />
+          </div>
+
+          <button type="submit" class="boton-principal">
+            Entrar en APEX
+          </button>
+
+          <p id="login-mensaje-error" class="mensaje-error" aria-live="polite">
+            <!-- Aquí mostraremos errores de login con JS -->
+          </p>
+        </form>
+
+        <p class="login-ayuda">
+          Prueba con <strong>cliente</strong> / <strong>apex2025</strong> o
+          <strong>marco</strong> / <strong>1234</strong>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Más adelante aquí enlazaremos js/auth.js -->
+  <script src="js/auth.js"></script>
+</body>
+</html>

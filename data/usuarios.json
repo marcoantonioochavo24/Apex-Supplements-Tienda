@@ -1,0 +1,6 @@
+{
+  "usuarios": [
+    { "usuario": "marco", "password": "1234" },
+    { "usuario": "cliente", "password": "apex2025" }
+  ]
+}

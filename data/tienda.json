@@ -1,0 +1,194 @@
+{
+  "nombre_tienda": "APEX SUPPLEMENTS",
+  "categorias": [
+    { "id": 1, "nombre": "Proteínas" },
+    { "id": 2, "nombre": "Pre-Entrenos" },
+    { "id": 3, "nombre": "Aminoácidos" },
+    { "id": 4, "nombre": "Snacks y Otros" }
+  ],
+  "productos": [
+    {
+      "id": 101,
+      "nombre": "APEX WHEY ISOLATE",
+      "id_categoria": 1,
+      "precio": 34.90,
+      "formato": "1 kg · 30 servicios",
+      "sabor": "Chocolate avellana",
+      "tipo": "isolate",
+      "destacado": true,
+      "descripcion_corta": "Aislado de suero con 25 g de proteína por toma, bajo en lactosa y azúcares.",
+      "imagen": "img/productos/apex-whey-isolate.jpg"
+    },
+    {
+      "id": 102,
+      "nombre": "MASS GAINER EXTREME",
+      "id_categoria": 1,
+      "precio": 39.90,
+      "formato": "2,5 kg · 25 servicios",
+      "sabor": "Vainilla cream",
+      "tipo": "gainer",
+      "destacado": false,
+      "descripcion_corta": "Ganador de peso con 50 g de proteína y carbohidratos limpios por ración.",
+      "imagen": "img/productos/mass-gainer-extreme.jpg"
+    },
+    {
+      "id": 103,
+      "nombre": "VEGAN PROTEIN BLEND",
+      "id_categoria": 1,
+      "precio": 32.90,
+      "formato": "1 kg · 30 servicios",
+      "sabor": "Chocolate y cacahuete",
+      "tipo": "vegana",
+      "destacado": true,
+      "descripcion_corta": "Mezcla vegetal de guisante y arroz con 22 g de proteína por toma.",
+      "imagen": "img/productos/vegan-protein-blend.jpg"
+    },
+    {
+      "id": 104,
+      "nombre": "NIGHT CASEIN",
+      "id_categoria": 1,
+      "precio": 29.90,
+      "formato": "1 kg · 30 servicios",
+      "sabor": "Cookies & cream",
+      "tipo": "caseina",
+      "destacado": false,
+      "descripcion_corta": "Caseína de liberación lenta ideal antes de dormir, 24 g de proteína por ración.",
+      "imagen": "img/productos/night-casein.jpg"
+    },
+
+    {
+      "id": 201,
+      "nombre": "NITRO PUMP PRE-WORKOUT",
+      "id_categoria": 2,
+      "precio": 29.90,
+      "formato": "300 g · 30 servicios",
+      "sabor": "Cítricos intensos",
+      "tipo": "con_cafeina",
+      "destacado": true,
+      "descripcion_corta": "Pre-entreno con 300 mg de cafeína, citrulina y beta-alanina para un bombeo y energía máximos.",
+      "imagen": "img/productos/nitro-pump-preworkout.jpg"
+    },
+    {
+      "id": 202,
+      "nombre": "STIM-FREE ENERGY",
+      "id_categoria": 2,
+      "precio": 27.90,
+      "formato": "240 g · 30 servicios",
+      "sabor": "Sandía fría",
+      "tipo": "sin_cafeina",
+      "destacado": false,
+      "descripcion_corta": "Pre-entreno sin cafeína centrado en el pump: citrulina, arginina y extractos vegetales para entrenar sin nerviosismo.",
+      "imagen": "img/productos/stim-free-energy.jpg"
+    },
+    {
+      "id": 203,
+      "nombre": "APEX FURY",
+      "id_categoria": 2,
+      "precio": 34.90,
+      "formato": "300 g · 30 servicios",
+      "sabor": "Blue raspberry",
+      "tipo": "con_cafeina",
+      "destacado": true,
+      "descripcion_corta": "Pre-entreno muy potente con 400 mg de cafeína, beta-alanina y nootrópicos para días de entreno pesado.",
+      "imagen": "img/productos/apex-fury.jpg"
+    },
+
+    {
+      "id": 301,
+      "nombre": "PURE CREATINE 500g",
+      "id_categoria": 3,
+      "precio": 19.90,
+      "formato": "500 g · 166 servicios",
+      "sabor": "Neutro",
+      "tipo": "creatina",
+      "destacado": true,
+      "descripcion_corta": "Creatina monohidrato micronizada 100% pura, se mezcla fácil y sin grumos.",
+      "imagen": "img/productos/pure-creatine-500.jpg"
+    },
+    {
+      "id": 302,
+      "nombre": "BCAA 2:1:1",
+      "id_categoria": 3,
+      "precio": 21.90,
+      "formato": "300 g · 40 servicios",
+      "sabor": "Limón helado",
+      "tipo": "bcaa",
+      "destacado": false,
+      "descripcion_corta": "Aminoácidos ramificados en ratio 2:1:1 para tomar antes, durante o después del entrenamiento.",
+      "imagen": "img/productos/bcaa-211.jpg"
+    },
+    {
+      "id": 303,
+      "nombre": "EAA COMPLETE",
+      "id_categoria": 3,
+      "precio": 24.90,
+      "formato": "300 g · 30 servicios",
+      "sabor": "Frutas del bosque",
+      "tipo": "eaa",
+      "destacado": false,
+      "descripcion_corta": "Combinación completa de aminoácidos esenciales para favorecer la síntesis proteica.",
+      "imagen": "img/productos/eaa-complete.jpg"
+    },
+    {
+      "id": 304,
+      "nombre": "L-GLUTAMINE",
+      "id_categoria": 3,
+      "precio": 18.90,
+      "formato": "300 g · 60 servicios",
+      "sabor": "Neutro",
+      "tipo": "glutamina",
+      "destacado": false,
+      "descripcion_corta": "Glutamina en polvo para tomar tras el entrenamiento o antes de dormir.",
+      "imagen": "img/productos/l-glutamine.jpg"
+    },
+
+    {
+      "id": 401,
+      "nombre": "PROTEIN BAR Triple Chocolate",
+      "id_categoria": 4,
+      "precio": 2.10,
+      "formato": "60 g · 20 g proteína",
+      "sabor": "Triple chocolate",
+      "tipo": "snack",
+      "destacado": true,
+      "descripcion_corta": "Barrita proteica suave con tres capas de chocolate y 20 g de proteína.",
+      "imagen": "img/productos/protein-bar-triple-chocolate.jpg"
+    },
+    {
+      "id": 402,
+      "nombre": "FAT BURNER THERMO",
+      "id_categoria": 4,
+      "precio": 24.90,
+      "formato": "90 cápsulas · 30 días",
+      "sabor": "Sin sabor",
+      "tipo": "quemador",
+      "destacado": false,
+      "descripcion_corta": "Complejo termogénico con cafeína, té verde y L-carnitina para etapas de definición.",
+      "imagen": "img/productos/fat-burner-thermo.jpg"
+    },
+    {
+      "id": 403,
+      "nombre": "DAILY VITAMINS",
+      "id_categoria": 4,
+      "precio": 14.90,
+      "formato": "120 comprimidos · 60 días",
+      "sabor": "Sin sabor",
+      "tipo": "vitaminas",
+      "destacado": true,
+      "descripcion_corta": "Multivitamínico diario pensado para gente activa y deportistas.",
+      "imagen": "img/productos/daily-vitamins.jpg"
+    },
+    {
+      "id": 404,
+      "nombre": "SHAKER APEX 600ml",
+      "id_categoria": 4,
+      "precio": 9.90,
+      "formato": "600 ml",
+      "sabor": "Negro / Verde APEX",
+      "tipo": "accesorio",
+      "destacado": false,
+      "descripcion_corta": "Shaker resistente con rejilla anti-grumos y tapa a rosca, ideal para tus batidos.",
+      "imagen": "img/productos/shaker-apex-600.jpg"
+    }
+  ]
+}

@@ -1,109 +1,95 @@
 <?php
-// php/login.php
-// Endpoint de login de la tienda.
-// Objetivo:
-// 1) Recibir usuario y password por POST
-// 2) Validarlos contra data/usuarios.json
-// 3) Si son correctos, devolver un token fijo + tienda completa (data/tienda.json)
-// 4) Si no son correctos, devolver error en JSON
+// Endpoint de login. Valida credenciales y devuelve token + datos de la tienda.
 
-// Indicamos que la respuesta es JSON, siempre.
-header("Content-Type: application/json; charset=UTF-8");
+require_once __DIR__ . '/config.php';
 
-// Solo aceptamos método POST para evitar accesos raros por GET.
-if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-  echo json_encode([
-    "ok" => false,
-    "mensaje" => "Método no permitido. Usa POST."
-  ]);
-  exit;
+/**
+ * Este endpoint solo acepta peticiones POST.
+ * Si se usa otro método, se devuelve un error 405 (método no permitido).
+ */
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    enviarRespuestaJson([
+        'ok' => false,
+        'mensaje' => 'Método no permitido. Usa POST.'
+    ], 405);
 }
 
-// Leemos el body por si viene en JSON (fetch suele mandarlo así)
-$body = file_get_contents("php://input");
-$datosEntrada = json_decode($body, true);
+// Inicializa el array de datos de entrada.
+$datosEntrada = null;
 
-// Si no viene JSON, probamos con POST normal (por compatibilidad)
-$usuario = "";
-$password = "";
+// Intenta leer el cuerpo de la petición (para el caso de JSON).
+$cuerpoCrudo = file_get_contents('php://input');
 
-if (is_array($datosEntrada)) {
-  $usuario = isset($datosEntrada["usuario"]) ? trim($datosEntrada["usuario"]) : "";
-  $password = isset($datosEntrada["password"]) ? trim($datosEntrada["password"]) : "";
-} else {
-  $usuario = isset($_POST["usuario"]) ? trim($_POST["usuario"]) : "";
-  $password = isset($_POST["password"]) ? trim($_POST["password"]) : "";
+// Si hay contenido en el cuerpo, se intenta decodificar como JSON.
+if (!empty($cuerpoCrudo)) {
+    $datosEntrada = json_decode($cuerpoCrudo, true);
 }
 
-// Validación mínima de seguridad: no seguimos si faltan datos.
-if ($usuario === "" || $password === "") {
-  echo json_encode([
-    "ok" => false,
-    "mensaje" => "Faltan datos de usuario o contraseña."
-  ]);
-  exit;
+// Si no se ha podido decodificar JSON, se intenta usar $_POST (formulario clásico).
+if (!is_array($datosEntrada)) {
+    $datosEntrada = $_POST;
 }
 
-// Rutas a ficheros JSON
-$rutaUsuarios = __DIR__ . "/../data/usuarios.json";
-$rutaTienda   = __DIR__ . "/../data/tienda.json";
+/**
+ * Extrae usuario y password de los datos de entrada.
+ * Se usan claves "usuario" y "password" tal y como vienen en usuarios.json.
+ */
+$usuario = isset($datosEntrada['usuario']) ? trim($datosEntrada['usuario']) : '';
+$password = isset($datosEntrada['password']) ? trim($datosEntrada['password']) : '';
 
-// Comprobamos que existen los ficheros
-if (!file_exists($rutaUsuarios) || !file_exists($rutaTienda)) {
-  echo json_encode([
-    "ok" => false,
-    "mensaje" => "Error interno: no se encuentran los datos de la tienda."
-  ]);
-  exit;
+// Valida que se han enviado usuario y contraseña.
+if ($usuario === '' || $password === '') {
+    enviarRespuestaJson([
+        'ok' => false,
+        'mensaje' => 'Debes enviar nombre de usuario y contraseña.'
+    ], 400);
 }
 
-// Cargamos usuarios.json
-$contenidoUsuarios = file_get_contents($rutaUsuarios);
-$datosUsuarios = json_decode($contenidoUsuarios, true);
+// Carga la lista de usuarios desde usuarios.json.
+$usuarios = cargarJsonDesdeData('usuarios.json');
 
-// Si el JSON está mal formado, abortamos
-if (!isset($datosUsuarios["usuarios"]) || !is_array($datosUsuarios["usuarios"])) {
-  echo json_encode([
-    "ok" => false,
-    "mensaje" => "Error interno: usuarios.json no tiene formato válido."
-  ]);
-  exit;
+// Variable para guardar al usuario que haga match.
+$usuarioEncontrado = null;
+
+/**
+ * Recorre el listado de usuarios y busca uno que coincida con usuario + password.
+ * Aquí la contraseña se compara en texto plano porque así está guardada en el JSON.
+ * En un entorno real se usarían hashes de contraseña.
+ */
+foreach ($usuarios as $usuarioActual) {
+    if (
+        isset($usuarioActual['usuario'], $usuarioActual['password']) &&
+        $usuarioActual['usuario'] === $usuario &&
+        $usuarioActual['password'] === $password
+    ) {
+        $usuarioEncontrado = $usuarioActual;
+        break;
+    }
 }
 
-// Recorremos usuarios y buscamos coincidencia exacta
-$credencialesCorrectas = false;
-
-foreach ($datosUsuarios["usuarios"] as $u) {
-  // Nos aseguramos de que existen las claves esperadas
-  if (!isset($u["usuario"]) || !isset($u["password"])) {
-    continue;
-  }
-
-  if ($u["usuario"] === $usuario && $u["password"] === $password) {
-    $credencialesCorrectas = true;
-    break;
-  }
+// Si no se ha encontrado usuario válido, se devuelve error 401.
+if ($usuarioEncontrado === null) {
+    enviarRespuestaJson([
+        'ok' => false,
+        'mensaje' => 'Credenciales incorrectas.'
+    ], 401);
 }
 
-if (!$credencialesCorrectas) {
-  echo json_encode([
-    "ok" => false,
-    "mensaje" => "Usuario o contraseña incorrectos."
-  ]);
-  exit;
-}
+// Si las credenciales son correctas, se carga la información de la tienda.
+$tienda = cargarJsonDesdeData('tienda.json');
 
-// Si llega aquí, el login es correcto.
-// Cargamos tienda.json para devolverlo completo.
-$contenidoTienda = file_get_contents($rutaTienda);
-$datosTienda = json_decode($contenidoTienda, true);
+// Se prepara la respuesta con el token del servidor, los datos básicos del usuario y la tienda completa.
+global $SERVER_TOKEN;
 
-// Token fijo para toda la práctica (como pide el enunciado)
-$tokenFijo = "TOKEN_APEX_2025";
+$respuesta = [
+    'ok' => true,
+    'token' => $SERVER_TOKEN,
+    'usuario' => [
+        'usuario' => $usuarioEncontrado['usuario'],
+        'nombre' => isset($usuarioEncontrado['nombre']) ? $usuarioEncontrado['nombre'] : $usuarioEncontrado['usuario']
+    ],
+    'tienda' => $tienda
+];
 
-// Respuesta final
-echo json_encode([
-  "ok" => true,
-  "token" => $tokenFijo,
-  "tienda" => $datosTienda
-]);
+// Se envía la respuesta JSON al cliente.
+enviarRespuestaJson($respuesta, 200);

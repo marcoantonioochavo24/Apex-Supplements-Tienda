@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Apex Supplements – Carrito</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Hoja de estilos global -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <!-- Cabecera común con logo y navegación -->
+    <header class="site-header">
+      <div class="site-header-inner">
+        <div class="header-brand">
+          <!-- Logo de la tienda -->
+          <div class="header-logo">
+            <img src="img/logo-apex.png" alt="Logo Apex Supplements">
+          </div>
+          <div class="header-title">
+            <span class="header-title-main">APEX SUPPLEMENTS</span>
+            <span class="header-title-sub">PERFORMANCE NUTRITION STORE</span>
+          </div>
+        </div>
+
+        <!-- Navegación principal -->
+        <nav class="main-nav">
+          <a href="dashboard.html">Inicio</a>
+          <a href="categories.html">Categorías</a>
+          <a href="cart.html" class="nav-active">Carrito</a>
+        </nav>
+
+        <!-- Usuario actual + botón de cierre de sesión -->
+        <div class="header-user">
+          <span id="userName" class="header-user-name"></span>
+          <button id="logoutButton" class="btn-outline" type="button">Cerrar sesión</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contenido principal del carrito -->
+    <main class="page-main">
+      <section>
+        <div class="section-header">
+          <div>
+            <h1 class="section-title">Tu carrito</h1>
+            <p class="section-subtitle">
+              Revisa los productos añadidos antes de finalizar el pedido.
+            </p>
+          </div>
+        </div>
+
+        <!-- Layout a dos columnas: lista de productos + resumen -->
+        <div class="cart-layout">
+          <!-- Columna izquierda: productos del carrito -->
+          <div>
+            <!-- Contenedor donde se pintarán los items del carrito -->
+            <div id="cartItems" class="cart-items">
+              <!-- El contenido se generará desde JavaScript -->
+            </div>
+
+            <!-- Mensaje cuando el carrito está vacío -->
+            <p id="emptyCartMessage" style="display: none; margin-top: 0.8rem;">
+              Tu carrito está vacío. Empieza en el
+              <a href="dashboard.html" class="product-link">inicio</a>
+              o explora las
+              <a href="categories.html" class="product-link">categorías</a>.
+            </p>
+          </div>
+
+          <!-- Columna derecha: resumen del pedido -->
+          <aside class="cart-summary">
+            <h2 class="section-title" style="font-size: 0.98rem; margin: 0 0 0.6rem;">
+              Resumen de la compra
+            </h2>
+
+            <!-- Filas con subtotal, posible envío, etc. -->
+            <div class="cart-summary-row">
+              <span>Subtotal</span>
+              <span id="cartSubtotal">0,00 €</span>
+            </div>
+
+            <div class="cart-summary-row">
+              <span>Envío</span>
+              <span>Calculado al finalizar</span>
+            </div>
+
+            <div class="cart-summary-row cart-summary-total">
+              <span>Total estimado</span>
+              <span id="cartTotal">0,00 €</span>
+            </div>
+
+            <!-- Botón principal para finalizar el pedido -->
+            <button
+              id="checkoutButton"
+              class="btn-primary"
+              type="button"
+              style="margin-top: 0.8rem; width: 100%;">
+              Finalizar pedido
+            </button>
+
+            <!-- Texto de seguridad y validación de precios -->
+            <p style="font-size: 0.76rem; color: var(--color-text-secondary); margin-top: 0.6rem;">
+              Antes de confirmar el cobro, los precios se validan en el servidor
+              para evitar manipulaciones desde el navegador.
+            </p>
+
+            <!-- Bloque de métodos de pago -->
+            <div class="cart-payment-methods">
+              <p class="cart-payment-text">Pago seguro con:</p>
+              <div class="cart-payment-logos">
+                <span class="payment-logo">VISA</span>
+                <span class="payment-logo">MASTERCARD</span>
+                <span class="payment-logo">PAYPAL</span>
+                <span class="payment-logo">BIZUM</span>
+              </div>
+              <p class="cart-payment-guarantee">
+                100% seguro · Conexión cifrada · Soporte Apex
+              </p>
+            </div>
+
+            <!-- Contenedor para mostrar posibles errores durante la validación -->
+            <p id="cartError" class="form-error" style="margin-top: 0.4rem;"></p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="site-footer">
+      © <span id="year"></span> Apex Supplements. Rendimiento sin excusas.
+    </footer>
+  </div>
+
+  <!-- Scripts comunes -->
+  <script src="js/ui.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/cart.js"></script>
+
+  <!-- Script específico de la página del carrito -->
+  <script src="js/cart-page.js"></script>
+
+  <!-- Script simple para actualizar el año del footer -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var yearSpan = document.getElementById('year');
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -4,191 +4,191 @@
     { "id": 1, "nombre": "Proteínas" },
     { "id": 2, "nombre": "Pre-Entrenos" },
     { "id": 3, "nombre": "Aminoácidos" },
-    { "id": 4, "nombre": "Snacks y Otros" }
+    { "id": 4, "nombre": "Snacks y otros" }
   ],
   "productos": [
     {
       "id": 101,
       "nombre": "APEX WHEY ISOLATE",
       "id_categoria": 1,
-      "precio": 34.90,
-      "formato": "1 kg · 30 servicios",
+      "precio": 36.90,
+      "formato": "1 kg",
       "sabor": "Chocolate avellana",
       "tipo": "isolate",
       "destacado": true,
-      "descripcion_corta": "Aislado de suero con 25 g de proteína por toma, bajo en lactosa y azúcares.",
-      "imagen": "img/productos/apex-whey-isolate.jpg"
+      "descripcion_corta": "Aislado de suero muy limpio y ligero. Entra suave y no se hace pesado ni deja sensación de hinchazón.",
+      "imagen": "img/productos/apex-whey-isolate.png"
     },
     {
       "id": 102,
       "nombre": "MASS GAINER EXTREME",
       "id_categoria": 1,
-      "precio": 39.90,
-      "formato": "2,5 kg · 25 servicios",
-      "sabor": "Vainilla cream",
+      "precio": 41.90,
+      "formato": "2,7 kg",
+      "sabor": "Vainilla cookie",
       "tipo": "gainer",
       "destacado": false,
-      "descripcion_corta": "Ganador de peso con 50 g de proteína y carbohidratos limpios por ración.",
-      "imagen": "img/productos/mass-gainer-extreme.jpg"
+      "descripcion_corta": "Gainer pensado para volumen de verdad: carbohidrato gradual + whey. Ideal si te cuesta subir de peso limpio.",
+      "imagen": "img/productos/mass-gainer-extreme.png"
     },
     {
       "id": 103,
       "nombre": "VEGAN PROTEIN BLEND",
       "id_categoria": 1,
-      "precio": 32.90,
-      "formato": "1 kg · 30 servicios",
-      "sabor": "Chocolate y cacahuete",
+      "precio": 33.50,
+      "formato": "1 kg",
+      "sabor": "Cacao y cacahuete tostado",
       "tipo": "vegana",
       "destacado": true,
-      "descripcion_corta": "Mezcla vegetal de guisante y arroz con 22 g de proteína por toma.",
-      "imagen": "img/productos/vegan-protein-blend.jpg"
+      "descripcion_corta": "Mezcla vegetal completa (guisante, arroz y habas) con textura cuidada para que no parezca arena.",
+      "imagen": "img/productos/vegan-protein-blend.png"
     },
     {
       "id": 104,
       "nombre": "NIGHT CASEIN",
       "id_categoria": 1,
-      "precio": 29.90,
-      "formato": "1 kg · 30 servicios",
-      "sabor": "Cookies & cream",
-      "tipo": "caseina",
+      "precio": 32.90,
+      "formato": "900 g",
+      "sabor": "Chocolate brownie",
+      "tipo": "caseína",
       "destacado": false,
-      "descripcion_corta": "Caseína de liberación lenta ideal antes de dormir, 24 g de proteína por ración.",
-      "imagen": "img/productos/night-casein.jpg"
+      "descripcion_corta": "Caseína micelar de digestión lenta para la noche. Perfecta para irte a dormir con los deberes hechos.",
+      "imagen": "img/productos/night-casein.png"
     },
 
     {
       "id": 201,
       "nombre": "NITRO PUMP PRE-WORKOUT",
       "id_categoria": 2,
-      "precio": 29.90,
-      "formato": "300 g · 30 servicios",
-      "sabor": "Cítricos intensos",
-      "tipo": "con_cafeina",
+      "precio": 30.90,
+      "formato": "300 g",
+      "sabor": "Lima ácida",
+      "tipo": "pre-entreno",
       "destacado": true,
-      "descripcion_corta": "Pre-entreno con 300 mg de cafeína, citrulina y beta-alanina para un bombeo y energía máximos.",
-      "imagen": "img/productos/nitro-pump-preworkout.jpg"
+      "descripcion_corta": "300 mg de cafeína, citrulina y beta-alanina para entrenos largos y pesados. Sabor cítrico para entrar enchufado.",
+      "imagen": "img/productos/nitro-pump-preworkout.png"
     },
     {
       "id": 202,
       "nombre": "STIM-FREE ENERGY",
       "id_categoria": 2,
-      "precio": 27.90,
-      "formato": "240 g · 30 servicios",
-      "sabor": "Sandía fría",
-      "tipo": "sin_cafeina",
+      "precio": 29.50,
+      "formato": "250 g",
+      "sabor": "Mango frío",
+      "tipo": "pre-entreno sin cafeína",
       "destacado": false,
-      "descripcion_corta": "Pre-entreno sin cafeína centrado en el pump: citrulina, arginina y extractos vegetales para entrenar sin nerviosismo.",
-      "imagen": "img/productos/stim-free-energy.jpg"
+      "descripcion_corta": "Pre-entreno sin cafeína con citrulina, arginina y nootrópicos suaves. Ideal para entrenar tarde sin destrozar el sueño.",
+      "imagen": "img/productos/stim-free-energy.png"
     },
     {
       "id": 203,
       "nombre": "APEX FURY",
       "id_categoria": 2,
-      "precio": 34.90,
-      "formato": "300 g · 30 servicios",
+      "precio": 35.90,
+      "formato": "300 g",
       "sabor": "Blue raspberry",
-      "tipo": "con_cafeina",
+      "tipo": "pre-entreno",
       "destacado": true,
-      "descripcion_corta": "Pre-entreno muy potente con 400 mg de cafeína, beta-alanina y nootrópicos para días de entreno pesado.",
-      "imagen": "img/productos/apex-fury.jpg"
+      "descripcion_corta": "Pre-entreno de alto octanaje con 400 mg de cafeína, beta-alanina y foco mental. Para días de pierna o récords.",
+      "imagen": "img/productos/apex-fury.png"
     },
 
     {
       "id": 301,
-      "nombre": "PURE CREATINE 500g",
+      "nombre": "PURE CREATINE 500",
       "id_categoria": 3,
       "precio": 19.90,
-      "formato": "500 g · 166 servicios",
+      "formato": "500 g",
       "sabor": "Neutro",
       "tipo": "creatina",
       "destacado": true,
-      "descripcion_corta": "Creatina monohidrato micronizada 100% pura, se mezcla fácil y sin grumos.",
-      "imagen": "img/productos/pure-creatine-500.jpg"
+      "descripcion_corta": "Monohidrato de creatina micronizada sin sabor. Se mezcla fácil y va directa a lo que importa: rendimiento.",
+      "imagen": "img/productos/pure-creatine-500.png"
     },
     {
       "id": 302,
       "nombre": "BCAA 2:1:1",
       "id_categoria": 3,
       "precio": 21.90,
-      "formato": "300 g · 40 servicios",
-      "sabor": "Limón helado",
+      "formato": "300 g",
+      "sabor": "Sandía fresca",
       "tipo": "bcaa",
       "destacado": false,
-      "descripcion_corta": "Aminoácidos ramificados en ratio 2:1:1 para tomar antes, durante o después del entrenamiento.",
-      "imagen": "img/productos/bcaa-211.jpg"
+      "descripcion_corta": "BCAA en ratio clásico 2:1:1 para proteger músculo en etapas de definición o entrenos en ayunas.",
+      "imagen": "img/productos/bcaa-211.png"
     },
     {
       "id": 303,
       "nombre": "EAA COMPLETE",
       "id_categoria": 3,
-      "precio": 24.90,
-      "formato": "300 g · 30 servicios",
-      "sabor": "Frutas del bosque",
+      "precio": 26.50,
+      "formato": "350 g",
+      "sabor": "Piña colada",
       "tipo": "eaa",
       "destacado": false,
-      "descripcion_corta": "Combinación completa de aminoácidos esenciales para favorecer la síntesis proteica.",
-      "imagen": "img/productos/eaa-complete.jpg"
+      "descripcion_corta": "Aminoácidos esenciales de amplio espectro para quien quiere ir un paso más allá que los BCAA.",
+      "imagen": "img/productos/eaa-complete.png"
     },
     {
       "id": 304,
       "nombre": "L-GLUTAMINE",
       "id_categoria": 3,
-      "precio": 18.90,
-      "formato": "300 g · 60 servicios",
+      "precio": 17.90,
+      "formato": "500 g",
       "sabor": "Neutro",
       "tipo": "glutamina",
       "destacado": false,
-      "descripcion_corta": "Glutamina en polvo para tomar tras el entrenamiento o antes de dormir.",
-      "imagen": "img/productos/l-glutamine.jpg"
+      "descripcion_corta": "Glutamina pura para apoyar la recuperación en bloques de volumen duros o semanas con mucho estrés.",
+      "imagen": "img/productos/l-glutamine.png"
     },
 
     {
       "id": 401,
-      "nombre": "PROTEIN BAR Triple Chocolate",
+      "nombre": "PROTEIN BAR TRIPLE CHOCOLATE",
       "id_categoria": 4,
-      "precio": 2.10,
-      "formato": "60 g · 20 g proteína",
+      "precio": 2.30,
+      "formato": "65 g",
       "sabor": "Triple chocolate",
-      "tipo": "snack",
-      "destacado": true,
-      "descripcion_corta": "Barrita proteica suave con tres capas de chocolate y 20 g de proteína.",
-      "imagen": "img/productos/protein-bar-triple-chocolate.jpg"
+      "tipo": "snack proteico",
+      "destacado": false,
+      "descripcion_corta": "Barrita densa, con 20 g de proteína y cobertura de chocolate. Para cuando sales del gym con hambre seria.",
+      "imagen": "img/productos/protein-bar-triple-chocolate.png"
     },
     {
       "id": 402,
       "nombre": "FAT BURNER THERMO",
       "id_categoria": 4,
       "precio": 24.90,
-      "formato": "90 cápsulas · 30 días",
+      "formato": "90 cápsulas",
       "sabor": "Sin sabor",
-      "tipo": "quemador",
+      "tipo": "termogénico",
       "destacado": false,
-      "descripcion_corta": "Complejo termogénico con cafeína, té verde y L-carnitina para etapas de definición.",
-      "imagen": "img/productos/fat-burner-thermo.jpg"
+      "descripcion_corta": "Quemador termogénico con cafeína, té verde y capsicum para etapas de definición controlada.",
+      "imagen": "img/productos/fat-burner-thermo.png"
     },
     {
       "id": 403,
       "nombre": "DAILY VITAMINS",
       "id_categoria": 4,
-      "precio": 14.90,
-      "formato": "120 comprimidos · 60 días",
+      "precio": 15.90,
+      "formato": "120 comprimidos",
       "sabor": "Sin sabor",
-      "tipo": "vitaminas",
-      "destacado": true,
-      "descripcion_corta": "Multivitamínico diario pensado para gente activa y deportistas.",
-      "imagen": "img/productos/daily-vitamins.jpg"
+      "tipo": "multivitamínico",
+      "destacado": false,
+      "descripcion_corta": "Multivitamínico deportivo para cubrir básicos en épocas de mucha carga de entreno o estudios.",
+      "imagen": "img/productos/daily-vitamins.png"
     },
     {
       "id": 404,
-      "nombre": "SHAKER APEX 600ml",
+      "nombre": "SHAKER APEX 600 ml",
       "id_categoria": 4,
-      "precio": 9.90,
+      "precio": 6.90,
       "formato": "600 ml",
-      "sabor": "Negro / Verde APEX",
+      "sabor": "Neón green",
       "tipo": "accesorio",
-      "destacado": false,
-      "descripcion_corta": "Shaker resistente con rejilla anti-grumos y tapa a rosca, ideal para tus batidos.",
-      "imagen": "img/productos/shaker-apex-600.jpg"
+      "destacado": true,
+      "descripcion_corta": "Shaker robusto de 600 ml con acabado mate y logo APEX en verde neón. Tapa segura para llevar en la mochila.",
+      "imagen": "img/productos/shaker-apex-600.png"
     }
   ]
 }

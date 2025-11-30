@@ -1,86 +1,98 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login - APEX SUPPLEMENTS</title>
-
-  <!-- Más adelante enlazaremos aquí css/estilos.css -->
-  <link rel="stylesheet" href="css/estilos.css" />
+  <meta charset="UTF-8">
+  <title>Apex Supplements – Acceso</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="pagina-login">
-  <main class="login-layout">
-    <!-- Panel izquierdo: branding, frase, contexto -->
-    <section class="login-panel-info">
-      <div class="login-logo">
-        <span class="login-logo-marca">APEX</span>
-        <span class="login-logo-subtitulo">SUPPLEMENTS</span>
-      </div>
+<body class="body-login">
+  <main class="auth-shell">
+    <!-- Panel izquierdo: branding y copy motivacional -->
+    <section class="auth-hero">
+      <div class="auth-hero-glow"></div>
 
-      <h1 class="login-titulo">
-        Rendimiento al máximo, sin complicaciones.
-      </h1>
+      <div class="auth-hero-inner">
+        <div class="auth-hero-logo">
+          <!-- Aquí usamos el logo clásico; si luego quieres el gorila solo cambias el src -->
+          <img src="img/gorila-apex.webp" alt="Logo Apex Supplements">
+        </div>
 
-      <p class="login-texto">
-        Accede a tu cuenta para explorar proteínas, pre-entrenos y todo lo que necesitas para llevar tus entrenos a otro nivel.
-      </p>
-
-      <ul class="login-beneficios">
-        <li>✔ Productos organizados por objetivos reales.</li>
-        <li>✔ Destacados pensados para gente que entrena de verdad.</li>
-        <li>✔ Carrito rápido y productos vistos recientemente.</li>
-      </ul>
-    </section>
-
-    <!-- Panel derecho: formulario de login -->
-    <section class="login-panel-form">
-      <div class="login-card">
-        <h2 class="login-card-titulo">Inicia sesión</h2>
-        <p class="login-card-subtitulo">
-          Usa tus credenciales de cliente para entrar en la tienda.
+        <h1 class="auth-hero-title">APEX SUPPLEMENTS</h1>
+        <p class="auth-hero-subtitle">
+          Nutrición pensada para entrenos serios, no para selfies.
         </p>
 
-        <form id="form-login" class="login-form">
-          <div class="campo-formulario">
-            <label for="usuario">Usuario</label>
+        <ul class="auth-hero-list">
+          <li>Stacks limpios y sin historias raras.</li>
+          <li>Suplementos para volumen, definición y rendimiento real.</li>
+          <li>Panel rápido para que pidas en dos clicks.</li>
+        </ul>
+
+        <p class="auth-hero-footnote">
+          Entra a tu panel y deja que la disciplina haga el resto.
+        </p>
+      </div>
+    </section>
+
+    <!-- Panel derecho: formulario de acceso -->
+    <section class="auth-card">
+      <header class="auth-header">
+        <p class="auth-header-kicker">Acceso privado</p>
+        <h2 class="auth-header-title">Inicia sesión en tu cuenta</h2>
+        <p class="auth-header-subtitle">
+          Usa tu usuario de Apex o entra con el acceso demo para probar la tienda.
+        </p>
+      </header>
+
+      <!-- Formulario de login -->
+      <form id="loginForm" class="auth-form">
+        <div class="auth-form-group">
+          <label for="usuario" class="auth-label">Usuario</label>
+          <div class="auth-input-wrapper">
             <input
-              type="text"
               id="usuario"
               name="usuario"
+              type="text"
               autocomplete="username"
-              required
-            />
+              placeholder="marco, cliente..."
+              class="auth-input">
           </div>
+        </div>
 
-          <div class="campo-formulario">
-            <label for="password">Contraseña</label>
+        <div class="auth-form-group">
+          <label for="password" class="auth-label">Contraseña</label>
+          <div class="auth-input-wrapper">
             <input
-              type="password"
               id="password"
               name="password"
+              type="password"
               autocomplete="current-password"
-              required
-            />
+              placeholder="••••••••"
+              class="auth-input">
           </div>
+        </div>
 
-          <button type="submit" class="boton-principal">
-            Entrar en APEX
-          </button>
+        <!-- Mensaje de error gestionado desde auth.js -->
+        <p id="loginError" class="form-error" style="min-height: 1.1rem;"></p>
 
-          <p id="login-mensaje-error" class="mensaje-error" aria-live="polite">
-            <!-- Aquí mostraremos errores de login con JS -->
-          </p>
-        </form>
+        <button type="submit" class="auth-submit">
+          Entrar al panel
+        </button>
+      </form>
 
-        <p class="login-ayuda">
-          Prueba con <strong>cliente</strong> / <strong>apex2025</strong> o
-          <strong>marco</strong> / <strong>1234</strong>.
+      <div class="auth-demo">
+        <p class="auth-demo-label">Acceso demo rápido</p>
+        <p class="auth-demo-text">
+          Cliente: <strong>cliente</strong> / <strong>apex2025</strong><br>
+          Usuario de pruebas: <strong>marco</strong> / <strong>1234</strong>
         </p>
       </div>
     </section>
   </main>
 
-  <!-- Más adelante aquí enlazaremos js/auth.js -->
+  <!-- Scripts -->
+  <script src="js/ui.js"></script>
   <script src="js/auth.js"></script>
 </body>
 </html>

@@ -1,6 +1,12 @@
-{
-  "usuarios": [
-    { "usuario": "marco", "password": "1234" },
-    { "usuario": "cliente", "password": "apex2025" }
-  ]
-}
+[
+  {
+    "usuario": "marco",
+    "password": "1234",
+    "nombre": "Marco"
+  },
+  {
+    "usuario": "cliente",
+    "password": "apex2025",
+    "nombre": "Cliente demo"
+  }
+]

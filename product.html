@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Apex Supplements – Producto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Hoja de estilos global -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <!-- Cabecera común con logo y navegación -->
+    <header class="site-header">
+      <div class="site-header-inner">
+        <div class="header-brand">
+          <div class="header-logo">
+            <img src="img/logo-apex.png" alt="Logo Apex Supplements">
+          </div>
+          <div class="header-title">
+            <span class="header-title-main">APEX SUPPLEMENTS</span>
+            <span class="header-title-sub">Performance Nutrition Store</span>
+          </div>
+        </div>
+
+        <!-- Navegación principal -->
+        <nav class="main-nav">
+          <a href="dashboard.html">Inicio</a>
+          <a href="categories.html">Categorías</a>
+          <a href="cart.html">Carrito</a>
+        </nav>
+
+        <!-- Zona de usuario y cierre de sesión -->
+        <div class="header-user">
+          <span id="userName" class="header-user-name"></span>
+          <button id="logoutButton" class="btn-outline" type="button">Cerrar sesión</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="page-main">
+      <!-- Bloque principal: ficha del producto -->
+      <section>
+        <div class="section-header">
+          <div>
+            <h1 class="section-title" id="productTitle">
+              <!-- Aquí se mostrará el nombre del producto -->
+            </h1>
+            <p class="section-subtitle" id="productSubtitle">
+              <!-- Aquí se mostrará un subtítulo con info corta del producto -->
+            </p>
+          </div>
+        </div>
+
+        <!-- Layout de la ficha: imagen + detalles -->
+        <div class="product-detail-layout">
+          <!-- Columna de imagen del producto -->
+          <div class="product-detail-image" id="productImageWrapper">
+            <img id="productImage" src="" alt="" class="product-image">
+          </div>
+
+          <!-- Columna de información del producto -->
+          <div class="product-detail-body">
+            <!-- Etiquetas como categoría, tipo, etc. -->
+            <div id="productBadges">
+              <!-- Se rellenará con chips (categoría, tipo, etc.) -->
+            </div>
+
+            <!-- Información de formato, sabor, etc. -->
+            <div class="product-detail-meta" id="productMeta">
+              <!-- Aquí van formato y sabor en texto -->
+            </div>
+
+            <!-- Descripción corta -->
+            <p id="productDescription">
+              <!-- Aquí se mostrará la descripción corta -->
+            </p>
+
+            <!-- Bloque de precio y acción -->
+            <div style="margin-top: 0.8rem;">
+              <div class="product-meta">
+                <span>Precio</span>
+                <span class="product-price" id="productPrice">
+                  <!-- Precio en euros -->
+                </span>
+              </div>
+
+              <div class="product-actions" style="margin-top: 0.8rem;">
+                <!-- Selector de cantidad -->
+                <div>
+                  <label for="quantity" class="form-label">Cantidad</label>
+                  <input
+                    id="quantity"
+                    type="number"
+                    min="1"
+                    value="1"
+                    class="cart-qty-input">
+                </div>
+
+                <!-- Botón para añadir al carrito -->
+                <button id="addToCartButton" class="btn-primary" type="button">
+                  Añadir al carrito
+                </button>
+              </div>
+            </div>
+
+            <!-- Enlace para volver a la categoría del producto -->
+            <div style="margin-top: 1rem;" id="backToCategoryWrapper">
+              <!-- Aquí se creará un enlace "Ver más de [categoría]" -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bloque secundario: otros productos relacionados -->
+      <section style="margin-top: 2rem;">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">También puede interesarte</h2>
+            <p class="section-subtitle">
+              Otros suplementos de la misma categoría que encajan con este.
+            </p>
+          </div>
+        </div>
+
+        <!-- Aquí se pintarán productos de la misma categoría -->
+        <div id="relatedProducts" class="grid grid-3"></div>
+      </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="site-footer">
+      © <span id="year"></span> Apex Supplements. Rendimiento sin excusas.
+    </footer>
+  </div>
+
+  <!-- Scripts comunes -->
+  <script src="js/ui.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/cart.js"></script>
+
+  <!-- Script específico de esta página (lo crearemos en el siguiente archivo) -->
+  <script src="js/product-page.js"></script>
+
+  <!-- Script sencillo para el año del footer -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var yearSpan = document.getElementById('year');
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+    });
+  </script>
+</body>
+</html>

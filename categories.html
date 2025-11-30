@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Apex Supplements – Categorías</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Hoja de estilos global -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <!-- Cabecera común con logo y navegación -->
+    <header class="site-header">
+      <div class="site-header-inner">
+        <div class="header-brand">
+          <!-- Logo de la marca -->
+          <div class="header-logo">
+            <img src="img/logo-apex.png" alt="Logo Apex Supplements">
+          </div>
+          <div class="header-title">
+            <span class="header-title-main">APEX SUPPLEMENTS</span>
+            <span class="header-title-sub">Performance Nutrition Store</span>
+          </div>
+        </div>
+
+        <!-- Navegación principal -->
+        <nav class="main-nav">
+          <a href="dashboard.html">Inicio</a>
+          <a href="categories.html" class="nav-active">Categorías</a>
+          <a href="cart.html">Carrito</a>
+        </nav>
+
+        <!-- Info de usuario + botón de cierre de sesión -->
+        <div class="header-user">
+          <span id="userName" class="header-user-name"></span>
+          <button id="logoutButton" class="btn-outline" type="button">Cerrar sesión</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contenido principal de la página -->
+    <main class="page-main">
+      <!-- Bloque 1: listado de categorías -->
+      <section>
+        <div class="section-header">
+          <div>
+            <h1 class="section-title">Categorías</h1>
+            <p class="section-subtitle">
+              Elige una categoría para ver todos los productos disponibles.
+            </p>
+          </div>
+        </div>
+
+        <!-- Aquí se pintará el grid de categorías desde JavaScript -->
+        <div id="categoriesList" class="grid grid-4"></div>
+      </section>
+
+      <!-- Bloque 2: productos filtrados por categoría -->
+      <section style="margin-top: 2rem;">
+        <div class="section-header">
+          <div>
+            <!-- Este título se actualizará con el nombre de la categoría seleccionada -->
+            <h2 class="section-title" id="currentCategoryTitle">
+              Productos de la categoría
+            </h2>
+            <p class="section-subtitle" id="currentCategorySubtitle">
+              Selecciona una categoría para ver sus suplementos.
+            </p>
+          </div>
+        </div>
+
+        <!-- Aquí se pintarán los productos de la categoría seleccionada -->
+        <div id="categoryProducts" class="grid grid-3"></div>
+      </section>
+    </main>
+
+    <!-- Pie de página común -->
+    <footer class="site-footer">
+      © <span id="year"></span> Apex Supplements. Rendimiento sin excusas.
+    </footer>
+  </div>
+
+  <!-- Scripts comunes -->
+  <script src="js/ui.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/cart.js"></script>
+
+  <!-- Script específico de esta página (lo crearemos después: categories.js) -->
+  <script src="js/categories.js"></script>
+
+  <!-- Pequeño script solo para el año del footer -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var yearSpan = document.getElementById('year');
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+    });
+  </script>
+</body>
+</html>

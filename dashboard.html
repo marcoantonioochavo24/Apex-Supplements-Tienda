@@ -1,102 +1,91 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard - APEX SUPPLEMENTS</title>
-  <link rel="stylesheet" href="css/estilos.css" />
+  <meta charset="UTF-8">
+  <title>Apex Supplements – Panel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="site-header-inner">
+        <div class="header-brand">
+          <div class="header-logo">
+            <img src="img/logo-apex.png" alt="Logo Apex Supplements">
+          </div>
+          <div class="header-title">
+            <span class="header-title-main">APEX SUPPLEMENTS</span>
+            <span class="header-title-sub">Performance Nutrition Store</span>
+          </div>
+        </div>
 
-  <header class="topbar">
-    <div class="topbar-logo">
-      <span class="topbar-marca">APEX</span>
-      <span class="topbar-sub">SUPPLEMENTS</span>
-    </div>
+        <nav class="main-nav">
+          <a href="dashboard.html" class="nav-active">Inicio</a>
+          <a href="categories.html">Categorías</a>
+          <a href="cart.html">Carrito</a>
+        </nav>
 
-    <nav class="topbar-nav">
-      <!-- Luego pondremos links reales e iconos -->
-      <a href="dashboard.html">Inicio</a>
-      <a href="categories.html">Categorías</a>
-      <a href="cart.html">Carrito</a>
-
-      <button id="btn-logout" class="boton-logout">Salir</button>
-    </nav>
-  </header>
-
-  <main class="contenedor-dashboard">
-
-  <!-- Cabecera del dashboard -->
-  <section class="dashboard-hero">
-    <div class="hero-texto">
-      <h1 class="hero-titulo">Bienvenido a APEX SUPPLEMENTS</h1>
-      <p class="hero-subtitulo">
-        Explora productos premium para volumen, definición y rendimiento real.
-      </p>
-    </div>
-
-    <!-- Mini resumen rápido (luego lo alimentaremos con JS si queremos) -->
-    <div class="hero-resumen">
-      <div class="resumen-item">
-        <span class="resumen-numero" id="num-productos">--</span>
-        <span class="resumen-texto">Productos</span>
+        <div class="header-user">
+          <span id="userName" class="header-user-name"></span>
+          <button id="logoutButton" class="btn-outline" type="button">Cerrar sesión</button>
+        </div>
       </div>
-      <div class="resumen-item">
-        <span class="resumen-numero" id="num-categorias">--</span>
-        <span class="resumen-texto">Categorías</span>
-      </div>
-      <div class="resumen-item">
-        <span class="resumen-numero" id="num-carrito">--</span>
-        <span class="resumen-texto">En carrito</span>
-      </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- DESTACADOS -->
-  <section class="dashboard-seccion">
-    <div class="seccion-cabecera">
-      <h2 class="seccion-titulo">Destacados de la semana</h2>
-      <p class="seccion-subtitulo">Los top ventas y los más recomendados.</p>
-    </div>
+    <main class="page-main">
+      <!-- Sección de productos destacados -->
+      <section>
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Recomendados para hoy</h2>
+            <p class="section-subtitle">Los suplementos más potentes para apretar tu rutina.</p>
+          </div>
+        </div>
+        <div id="featuredProducts" class="grid grid-3"></div>
+      </section>
 
-    <!-- Aquí JS pintará las cards destacadas -->
-    <div class="grid-productos" id="contenedor-destacados">
-      <!-- Cards inyectadas por JS -->
-    </div>
-  </section>
+      <!-- Sección de categorías -->
+      <section style="margin-top: 2rem;">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Explora por categoría</h2>
+            <p class="section-subtitle">Proteínas, pre-entrenos, aminoácidos y más.</p>
+          </div>
+        </div>
+        <div id="homeCategories" class="grid grid-4"></div>
+      </section>
 
-  <!-- CATEGORÍAS -->
-  <section class="dashboard-seccion">
-    <div class="seccion-cabecera">
-      <h2 class="seccion-titulo">Categorías</h2>
-      <p class="seccion-subtitulo">Encuentra lo que necesitas según tu objetivo.</p>
-    </div>
+      <!-- Sección de productos vistos recientemente -->
+      <section style="margin-top: 2rem;">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Vistos recientemente</h2>
+            <p class="section-subtitle">Lo último que has estado revisando en la tienda.</p>
+          </div>
+        </div>
+        <div id="recentProducts" class="grid grid-3"></div>
+      </section>
+    </main>
 
-    <!-- Aquí JS pintará las categorías -->
-    <div class="grid-categorias" id="contenedor-categorias">
-      <!-- Cards de categorías inyectadas por JS -->
-    </div>
-  </section>
+    <footer class="site-footer">
+      © <span id="year"></span> Apex Supplements. Rendimiento sin excusas.
+    </footer>
+  </div>
 
-  <!-- VISTOS RECIENTEMENTE -->
-  <section class="dashboard-seccion">
-    <div class="seccion-cabecera">
-      <h2 class="seccion-titulo">Vistos recientemente</h2>
-      <p class="seccion-subtitulo">Productos que te interesaron hace poco.</p>
-    </div>
-
-    <!-- Aquí JS pintará los vistos -->
-    <div class="grid-productos" id="contenedor-vistos">
-      <!-- Cards inyectadas por JS -->
-    </div>
-  </section>
-
-</main>
-
-
-  <!-- Utilidades comunes -->
-  <script src="js/util_localstorage.js"></script>
-  <!-- JS específico de dashboard -->
+  <script src="js/ui.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/cart.js"></script>
   <script src="js/dashboard.js"></script>
+  <script>
+    // Actualiza el año en el footer.
+    document.addEventListener('DOMContentLoaded', function () {
+      var yearSpan = document.getElementById('year');
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+    });
+  </script>
 </body>
 </html>
